@@ -1,1 +1,30 @@
-<h1>Desde index oficios</h1>
+<div class="container">
+    <h1 class="text-center mt-5">¿Necesitas Un Profesional?</h1>
+    <div class="row mt-5">
+        <div class="col">
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Categoria</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+        <div class="col">
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Región</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+        <div class="col">
+            <button class="btn btn-outline-primary w-100">Buscar</button>
+        </div>
+    </div>
+
+    <%@oficios.each do |oficio|%>
+        <h1><%=oficio.titulo%></h1>
+        <p><%=oficio.descripcion%></p>
+    <%end%>
+</div>
+
