@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   
   root "oficios#index"
   resources :oficios, except: [:index]
+
+  get 'signup', to: "usuarios#new"
+  resources :usuarios, except: [:new]
   # Defines the root path route ("/")
   # root "articles#index"
   #resources :articles

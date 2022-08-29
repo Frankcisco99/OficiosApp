@@ -1,0 +1,48 @@
+<div class="container">
+    <h1 class="text-center mt-5">Crea tú cuenta y comienza a crear avisos</h1>
+
+    <%if @user.errors.any?%>
+    <div class="alert alert-danger" role="alert">
+        The following errors prevent the account from being created
+        <ul>
+            <%@user.errors.full_messages.each do |msg|%>
+                <li><%=msg%></li>
+            <%end%>
+        </ul>
+        </div>
+    <%end%>
+
+    
+    <%= form_with(model: @user, local: true , data: {turbo: false}, class: "w-90 m-auto bg-secondary bg-gradient rounded p-5 text-white mt-5 mb-5 shadow") do |f|%>
+    <div class="row">
+    <div class="col-2">
+        <%= f.label :nombre%>
+    </div>
+    <div class="col-10">
+        <%= f.text_field :nombre, class:"w-100 rounded border-0 p-2", placeholder: "Ingresa tú nombre"%>  
+    </div>
+    
+    
+    </div>
+    <div class="row mt-5">
+        <div class="col-2">
+            <%= f.label :email%>    
+        </div>
+        <div class="col-10">
+            <%= f.email_field :email, class:"w-100 rounded border-0 p-2", placeholder: "Ingresa tú email"%>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-2">
+            <%= f.label :password%>    
+        </div>
+        <div class="col-10">
+            <%= f.password_field :password, class:"w-100 rounded border-0 p-2", placeholder: "Crea una contraseña" %>
+        </div>
+    </div>
+    <div class="text-center mt-5">
+    <%= f.submit "Crear Cuenta", class:"p-2 btn btn-outline-light"%>
+    </div>
+    <%end%>
+</div>
