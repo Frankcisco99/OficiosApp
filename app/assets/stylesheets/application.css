@@ -13,6 +13,16 @@
  *= require_tree .
  *= require_self
  */
+ body{
+    position: relative;
+ }
+
+ body::after {
+    content: '';
+    display: block;
+    height: 50px;
+  }
+
 .footer{
     height: 50px;
     display: flex;
@@ -20,6 +30,8 @@
     justify-content: center;
     font-weight: bold;
     width: 100%;
+    position: absolute;
+    bottom: 0;
 }
 
 .profile-pic{
